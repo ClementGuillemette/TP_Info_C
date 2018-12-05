@@ -1,5 +1,6 @@
 #include "cards.h"
 #include <stdlib.h>
+#include <time.h>
 #include <stdio.h>
 
 void display_hand(t_card *head)
@@ -53,25 +54,39 @@ t_card *create_deck()
 
 void dispatch_2p(t_card *deck, t_card **hand_p1, t_card **hand_p2)
 {
-    int nb_cards = 32;
+    int nb_cards = 31;
     t_card *Card = deck;
-    t_card *addr_prec;
-    t_card *addr_prec_p1 = NULL;
+    struct s_card *addr_prec = NULL;
+    struct s_card *addr_prec_p1 = NULL;
 
-    for (int i = 0; i < 16; i++)
+    while (nb_cards > 16)
     {
-        int alea_card = rand() % nb_cards;
-
-        for (int j = 1; j < alea_card; j++)
+        for (int i = 0; i < 16; i++)
         {
-            addr_prec = Card;
-            Card = Card->next;
-        }
+            Card = deck;
+            srand(time(NULL));
+            int alea_card = rand() % nb_cards;
+            printf("nb alea : %d\n", alea_card);
 
-        addr_prec->next = Card->next;
-        Card->next = addr_prec_p1;
-        hand_p1 = &Card;
-        addr_prec_p1 = Card;
-        nb_cards--;
+            for (int j = 0; j < alea_card; j++)
+            {
+                addr_prec = Card;
+                if (Card->next->next == NULL)
+                {
+                    Card = deck;
+                }
+                else
+                {
+                    Card = Card->next;
+                }
+            }
+
+            addr_prec->next = Card->next;
+            (*hand_p1) = Card;
+            Card->next = addr_prec_p1;
+            addr_prec_p1 = Card;
+            nb_cards--;
+        }
     }
+    (*hand_p2) = deck;
 }
