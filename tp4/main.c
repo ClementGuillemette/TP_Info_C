@@ -6,6 +6,7 @@ int main()
 {
 
     t_card *deck = create_deck();
+    printf("deck\n");
     display_hand(deck);
     
     t_card *p1 = NULL;
@@ -16,7 +17,7 @@ int main()
 
     dispatch_2p(deck, &p1, &p2);
 
-    printf("player 1\n");
+    printf("\nplayer 1\n");
     display_hand(p1);
     printf("\nplayer 2\n");
     display_hand(p2);

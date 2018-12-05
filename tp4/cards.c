@@ -66,7 +66,6 @@ void dispatch_2p(t_card *deck, t_card **hand_p1, t_card **hand_p2)
             Card = deck;
             srand(time(NULL));
             int alea_card = rand() % nb_cards;
-            printf("nb alea : %d\n", alea_card);
 
             for (int j = 0; j < alea_card; j++)
             {
