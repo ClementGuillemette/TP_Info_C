@@ -9,7 +9,8 @@ void display_hand(t_card *head)
 
     while (ptr != NULL)
     {
-        printf("%d , %d \n", ptr->value, ptr->color);
+        printf("%d\n", ptr->value);
+        printf("%d\n", ptr->color);
         ptr = ptr->next;
     }
 }
@@ -33,6 +34,25 @@ t_card *create_deck()
     return Card;
 }
 
-// void dispatch_2p(t_card* deck, t_card **hand_p1, t_card **hand_p2)
-// {
-// }
+void dispatch_2p(t_card* deck, t_card **hand_p1, t_card **hand_p2)
+{
+    int nb_cards = 32;
+    t_card *Card = deck;
+    t_card *addr_prec;
+    t_card *addr_prec_p1 = NULL;
+
+    for(int i=0;i<16;i++)
+    {
+        int alea_card = rand() % nb_cards;
+        for(int j = 1; j < alea_card;j++)
+        {
+            addr_prec = Card;
+            Card = Card->next;
+        }
+        addr_prec->next = Card->next;
+        Card->next = addr_prec_p1;
+        hand_p1 = &Card;
+        addr_prec_p1 = Card;
+
+    }
+}
