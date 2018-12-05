@@ -4,13 +4,30 @@
 
 void display_hand(t_card *head)
 {
+    char *convert_color[MAX_COLOR] =
+        {
+            "PIQUE",
+            "COEUR",
+            "CARREAU",
+            "TREFLE"};
+
+    char *convert_value[MAX_VAL] =
+        {
+            "SEPT",
+            "HUIT",
+            "NEUF",
+            "DIX",
+            "VALET",
+            "REINE",
+            "ROI",
+            "AS"};
+
     t_card *ptr = NULL;
     ptr = head;
 
     while (ptr != NULL)
     {
-        printf("%d\n", ptr->value);
-        printf("%d\n", ptr->color);
+        printf("%s de %s\n", convert_value[ptr->value], convert_color[ptr->color]);
         ptr = ptr->next;
     }
 }
@@ -34,7 +51,7 @@ t_card *create_deck()
     return Card;
 }
 
-void dispatch_2p(t_card* deck, t_card **hand_p1, t_card **hand_p2)
+/*void dispatch_2p(t_card* deck, t_card **hand_p1, t_card **hand_p2)
 {
     int nb_cards = 32;
     t_card *Card = deck;
@@ -55,4 +72,4 @@ void dispatch_2p(t_card* deck, t_card **hand_p1, t_card **hand_p2)
         addr_prec_p1 = Card;
 
     }
-}
+}*/
