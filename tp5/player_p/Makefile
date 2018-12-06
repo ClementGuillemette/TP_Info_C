@@ -1,11 +1,11 @@
 SRCS=$(wildcard *.c)
 OBJS=$(SRCS:.c=.o)
-CFLAGS= -Wall # a completer
+CFLAGS= -Wall -I..# a completer
 LDFLAGS= 
-NAME=example3
+NAME=p1
 
 all: $(OBJS)
-	# a completer
+	gcc -v -o $(NAME).so -shared $(OBJS)
 
 clean: 
 	rm $(OBJS)

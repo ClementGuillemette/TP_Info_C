@@ -14,7 +14,7 @@ typedef struct s_player
     uint32_t y;
     int32_t credits;
     uint32_t count;
-    void* so_handle;
+    void* so_handle; // vers le fichier a manipuler
     char (*get_action)(void);
 
 } t_player;
