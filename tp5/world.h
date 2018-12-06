@@ -13,4 +13,4 @@ void world_set_players();
 void world_create_players();
 void world_get_winner();
 
-#endif 
+#endif
