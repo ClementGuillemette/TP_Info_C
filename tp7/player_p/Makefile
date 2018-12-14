@@ -8,5 +8,5 @@ all: $(OBJS)
 	gcc -shared -o $(NAME).so $(OBJS)
 
 clean: 
-	rm $(OBJS)
-	rm $(NAME).so
+	rm -f $(OBJS)
+	rm -f $(NAME).so

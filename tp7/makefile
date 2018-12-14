@@ -15,5 +15,5 @@ libso: $(OBJS)
 	gcc -v -shared -o libsplash.so actions.o main.o player.o world.o
 
 clean: 
-	rm $(OBJS)
-	rm $(EXE)
+	rm -f $(OBJS)
+	rm -f $(EXE)

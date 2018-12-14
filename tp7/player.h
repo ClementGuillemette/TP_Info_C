@@ -16,6 +16,7 @@ typedef struct s_player
     uint32_t count;
     void* so_handle;
     char (*get_action)(void);
+    char *so_path;
 } t_player;
 
 void player_init(t_player* p_player, uint8_t num);

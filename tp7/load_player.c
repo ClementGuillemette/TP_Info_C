@@ -26,5 +26,6 @@ void load_players(int argc, char *argv[])
             dlclose(players[i]->so_handle);
             exit(EXIT_FAILURE);
         }
+        players[i]->so_path = argv[i+1];
     }
 }

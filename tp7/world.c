@@ -63,6 +63,6 @@ void world_get_winner()
 
     for (i = 0; i < MAX_PLAYERS; i++)
     {
-        printf("player %d: %d\n", players[i]->id, players[i]->count);
+        printf("[%s] -> player %d: %d\n", players[i]->so_path, players[i]->id, players[i]->count);
     }
 }
