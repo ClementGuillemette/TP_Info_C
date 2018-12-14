@@ -2,9 +2,9 @@
 #define __PARAM__
 
 #define MAX_PLAYERS 4
-#define MAP_SIZE 500
+#define MAP_SIZE 40
 #define SPOT_NUM MAP_SIZE * MAP_SIZE
-#define SQUARE_SIZE 1
+#define SQUARE_SIZE 20
 #define WIN_SIZE MAP_SIZE * SQUARE_SIZE
 
 #define CREDITS 9000;
